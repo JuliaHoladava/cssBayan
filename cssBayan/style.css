@@ -22,17 +22,13 @@ header {
     width: 80vw;
     overflow: hidden;
 }
-.accordion {
-    
-}
 .accordion__input {
     display: none;
 }
 .accordion__input:checked ~ .accordion__label {
     font-weight: 600;
 }
-.accordion__input:checked ~ .accordion__label svg,
-.accordion__label:hover svg {
+.accordion__input:checked ~ .accordion__label svg {
     transform: rotate(45deg);
     transition: 1s;
 }
@@ -41,22 +37,11 @@ header {
     transition: height 1s;
     height: 30vw;
 }
-.accordion__input:hover ~ .accordion__content,
-.accordion__input:hover ~ .accordion__content img {
-    transition: height 1s;
-    transition-delay: .5s;
-    height: 30vw;
-}
 .accordion__label {
     display: flex;
     justify-content: space-between;
     padding: 20px 0;
     cursor: pointer;
-}
-.accordion__label:hover {
-    font-weight: 600;
-    transition: 1s;
-
 }
 .accordion__content {
     height: 0;
@@ -78,4 +63,30 @@ hr {
     justify-content: space-between;
     align-items: center;
     height: 15vh;
+}
+@media (max-width: 900px) {
+    html, body {
+        font-size: 1.1rem;
+    }
+}
+@media (max-width: 767px) {
+    html, body {
+        font-size: 1rem;
+    }
+}
+@media (min-width: 900px) {
+    .accordion__label:hover {
+        font-weight: 600;
+        transition: 1s;
+    }
+    .accordion__input:hover ~ .accordion__content,
+    .accordion__input:hover ~ .accordion__content img {
+        transition: height 1s;
+        transition-delay: .5s;
+        height: 30vw;
+    }
+    .accordion__label:hover svg {
+        transform: rotate(45deg);
+        transition: 1s;
+    }
 }
