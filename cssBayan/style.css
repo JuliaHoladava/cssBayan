@@ -31,40 +31,44 @@ header {
 .accordion__input:checked ~ .accordion__label {
     font-weight: 600;
 }
-.accordion__input:checked ~ .accordion__label svg {
+.accordion__input:checked ~ .accordion__label svg,
+.accordion__label:hover svg {
     transform: rotate(45deg);
+    transition: 1s;
 }
-.accordion__input:checked ~ .accordion__content {
-    display: block;
-    transition: 2s;
+.accordion__input:checked ~ .accordion__content,
+.accordion__input:checked ~ .accordion__content img {
+    transition: height 1s;
+    height: 30vw;
 }
-.accordion__input:hover ~ .accordion__content {
-    display:block;
+.accordion__input:hover ~ .accordion__content,
+.accordion__input:hover ~ .accordion__content img {
+    transition: height 1s;
+    transition-delay: .5s;
+    height: 30vw;
 }
 .accordion__label {
     display: flex;
     justify-content: space-between;
     padding: 20px 0;
     cursor: pointer;
-    transition: all 2s transform 2s;
 }
 .accordion__label:hover {
     font-weight: 600;
-    color: aqua;
-}
-.accordion__label:hover svg {
-    transform: rotate(45deg);
+    transition: 1s;
+
 }
 .accordion__content {
-    display: none;
+    height: 0;
     padding: 0 0 20px 0;
-    transition: all 2s;
 }
 .accordion__img {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50vw;
+    max-height: 30vw;
+    height: 0;
 }
 hr {
     border: 0.5px solid #e6e0e0;
