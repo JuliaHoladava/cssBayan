@@ -5,28 +5,73 @@
 html, body {
     height: 100%;
     line-height: 1;
-    font-size: 20px;
+    font-size: 1.25rem;
+    font-family: Arial, Helvetica, sans-serif;
     color: #333;
-}
-button {
-    cursor: pointer;
 }
 a, a:visited, a:hover {
     text-decoration: none;
     color: #3c5abc;
 }
+header {
+    height: 10vh;
+    line-height: 10vh;
+}
 .wrapper {
     margin: 0 auto;
-    height: 100%;
-    width: 90%;
+    width: 80vw;
     overflow: hidden;
 }
-.content {
+.accordion {
     
+}
+.accordion__input {
+    display: none;
+}
+.accordion__input:checked ~ .accordion__label {
+    font-weight: 600;
+}
+.accordion__input:checked ~ .accordion__label svg {
+    transform: rotate(45deg);
+}
+.accordion__input:checked ~ .accordion__content {
+    display: block;
+    transition: 2s;
+}
+.accordion__input:hover ~ .accordion__content {
+    display:block;
+}
+.accordion__label {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    cursor: pointer;
+    transition: all 2s transform 2s;
+}
+.accordion__label:hover {
+    font-weight: 600;
+    color: aqua;
+}
+.accordion__label:hover svg {
+    transform: rotate(45deg);
+}
+.accordion__content {
+    display: none;
+    padding: 0 0 20px 0;
+    transition: all 2s;
+}
+.accordion__img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50vw;
+}
+hr {
+    border: 0.5px solid #e6e0e0;
 }
 .footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 15%;
+    height: 15vh;
 }
